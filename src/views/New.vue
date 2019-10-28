@@ -18,7 +18,7 @@
       </v-col>
 
       <v-row justify="space-around">
-        <v-date-picker class="mt-5" v-model="calendarPicker" color="green lighten-1" locale="pt-br"></v-date-picker>
+        <v-date-picker class="mt-5" v-model="calendar" color="green lighten-1" locale="pt-br"></v-date-picker>
         <v-time-picker class="mt-5" v-model="time" color="green lighten-1"></v-time-picker>
       </v-row>
 
@@ -45,7 +45,7 @@ export default {
         (v && v.length <= 400) ||
         "Descrição não pode ter mais de 400 caracteres."
     ],
-    calendarPicker: new Date().toISOString().substr(0, 10),
+    calendar: new Date().toISOString().substr(0, 10),
     time: null,
   }),
 
