@@ -23,6 +23,11 @@ const routes = [
     name: 'new',
     component: () => import(/* webpackChunkName: "about" */ '../views/New.vue')
   },
+  {
+    path: '/edit',
+    name: 'edit',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Edit.vue')
+  },
 ]
 
 const router = new VueRouter({
