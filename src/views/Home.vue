@@ -28,20 +28,12 @@ export default {
     };
   },
   methods: {
-    reverseObj(obj) {
-      const arryReverse = Object.entries(obj).reverse();
-      const objReverse = {};
-      arryReverse.forEach(element => {
-        objReverse[element[0]] = element[1];
-      });
-      return objReverse;
-    },
     toEditLembrete(id) {
       return router.push({ path: `/edit?id=${id}` })
     },
     async getLembretes() {
-      let cards = await api.get("/lembretes");
-      return (this.cards = this.reverseObj(cards.data));
+      const cards = await api.get("/lembretes");
+      return this.cards = cards.data.reverse();
     }
   },
   mounted() {
