@@ -6,13 +6,13 @@
         <span class="font-weight-light">App</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn text @click="toRoute('home')">
+      <v-btn color="green lighten" text @click="toRoute('home')">
         <span class="mr-2">Home</span>
       </v-btn>
-      <v-btn text @click="toRoute('new')">
+      <v-btn color="green lighten" text @click="toRoute('new')">
         <span class="mr-2">Novo</span>
       </v-btn>
-      <v-btn text @click="toRoute('about')">
+      <v-btn color="green lighten" text @click="toRoute('about')">
         <span class="mr-2">About</span>
       </v-btn>
     </v-app-bar>
