@@ -23,13 +23,16 @@
       </v-row>
 
       <div class="my-2">
-        <v-btn block color="green lighten-1" dark>Criar Lembrete</v-btn>
+        <v-btn block color="green lighten-1" dark @click="submit">Criar Lembrete</v-btn>
       </div>
     </v-container>
   </v-form>
 </template>
 
 <script>
+import api from '../services/api';
+import router from '../router/index';
+
 export default {
   data: () => ({
     valid: true,
@@ -57,6 +60,17 @@ export default {
     },
     reset() {
       this.$refs.form.reset();
+    },
+    async submit(){
+      const send = {
+        id: `${Date.now()}${parseInt(Math.random() * (999999 - 1) + 1, 10)}`,
+        title: this.title,
+        description: this.description,
+        calendar: this.calendar,
+        time: this.time
+      };
+      await api.post('/lembretes', send)
+      return router.push({ name: 'home' })
     }
   },
 };
