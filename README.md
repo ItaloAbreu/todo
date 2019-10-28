@@ -6,6 +6,11 @@ yarn install
 ```
 
 ### Compiles and hot-reloads for development
+
+Precisa iniciar o `backend` e o `frontend` com os dois comandos abaixo;
+```
+yarn backend
+```
 ```
 yarn serve
 ```
